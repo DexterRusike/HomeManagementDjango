@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<div class="timesheet">
+
+<h1><span style='color: blue;'>DAD & MUM LTD</span> HOME JOB TIME SHEET</h1>
+<h5 class="title">EMPLOYEE NAME: {{user_name}}</h5>
+
+
+<div class="days_week">
+
+  <div class="day">
+    <h3>Enter your activities:</h3>
+    <div class="'already_content">
+      <p>{{ entries.activity }}</p>
+    </div>
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit">
+    </form>
+  </form>
+  </div>
+
+
+  <div class="actual_activities">
+    <div class="actual_act">
+      <h5>MONDAY</h5>
+      {% for book in entries %}
+      {% if book.assigned_day == 'Monday' %}
+      <h6><span class="material-symbols-outlined">
+        check_box
+        </span>{{ book.activity }}</h6>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="actual_act">
+      <h5>TUESDAY</h5>
+      {% for book in entries %}
+      {% if book.assigned_day == 'Tuesday' %}
+      <h6><span class="material-symbols-outlined">
+        check_box
+        </span>{{ book.activity }}</h6>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="actual_act">
+      <h5>WEDNESDAY</h5>
+      {% for book in entries %}
+      {% if book.assigned_day == 'Wednesday' %}
+      <h6><span class="material-symbols-outlined">
+        check_box
+        </span>{{ book.activity }}</h6>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="actual_act">
+      <h5>THURSDAY</h5>
+      {% for book in entries %}
+      {% if book.assigned_day == 'Thursday' %}
+      <h6><span class="material-symbols-outlined">
+        check_box
+        </span>{{ book.activity }}</h6>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="actual_act">
+      <h5>FRIDAY</h5>
+      {% for book in entries %}
+      {% if book.assigned_day == 'Friday' %}
+      <h6><span class="material-symbols-outlined">
+        check_box
+        </span>{{ book.activity }}</h6>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="actual_act">
+      <h5>SATURDAY</h5>
+      {% for book in entries %}
+      {% if book.assigned_day == 'Saturday' %}
+      <h6><span class="material-symbols-outlined">
+        check_box
+        </span>{{ book.activity }}</h6>
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="actual_act">
+      <h5>SUNDAY</h5>
+      {% for book in entries %}
+      {% if book.assigned_day == 'Sunday' %}
+      <h6><span class="material-symbols-outlined">
+        check_box
+        </span>{{ book.activity }}</h6>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}

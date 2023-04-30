@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<div class='loan'>
+
+
+<div class='title'>
+<h1>DAD & MUM LTD LOAN APPLICATION</h1>
+<h3>PERSONAL INFORMATION</h3>
+</div>
+
+<div class="forms">
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ loan_application_form.as_p }}
+        <input class="loan_sub"  type="submit">
+    </form>
+    <div class="applied_loan">
+        <h1>Applied loans</h1>
+        <div class="spec_loan">
+            {% for loan in loans %}
+        <div class="my_loan">
+            <h4>LOAN</h4>
+            <p> <span class="title">Name:</span>  {{ loan.user }}</p>
+            <p><span class="title">Amount-borrowed:</span> {{ loan.amount }}</p>
+            <p><span class="title">Mobile-number:</span> {{ loan.mobile_number }}</p>
+        </div>
+        {% endfor %}
+        </div>
+        
+    </div>
+      
+</div>
+
+
+
+
+</div>
+
+
+{% endblock %}
