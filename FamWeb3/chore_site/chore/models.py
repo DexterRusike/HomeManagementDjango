@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-
-from phonenumber_field.modelfields import PhoneNumberField
 from django.utils import timezone
 
 # Create your models here.
