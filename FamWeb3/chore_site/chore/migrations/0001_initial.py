@@ -97,14 +97,12 @@ class Migration(migrations.Migration):
                 (
                     "home_number",
                     models.DecimalField(decimal_places=2, max_digits=4)
-                      
-                ),
+                    ),
                 (
                     "mobile_number",
-                    phonenumber_field.modelfields.PhoneNumberField(
-                        blank=True, max_length=128, null=True, region=None
+                    models.IntegerField(decimal_places=2, max_digits=4))(
+                        blank=True, max_length=128, null=True
                     ),
-                ),
                 ("amount", models.IntegerField(default=1)),
                 ("repayment", models.DateField()),
                 ("amount_due", models.IntegerField()),
