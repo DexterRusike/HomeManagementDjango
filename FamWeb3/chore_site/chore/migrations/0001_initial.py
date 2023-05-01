@@ -96,9 +96,8 @@ class Migration(migrations.Migration):
                 ("date_of_birth", models.DateField()),
                 (
                     "home_number",
-                    phonenumber_field.modelfields.PhoneNumberField(
-                        blank=True, max_length=128, null=True, region=None
-                    ),
+                    models.DecimalField(decimal_places=2, max_digits=4)
+                      
                 ),
                 (
                     "mobile_number",
